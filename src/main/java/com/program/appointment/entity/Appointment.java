@@ -1,13 +1,16 @@
 package com.program.appointment.entity;
 
-import lombok.Data;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "appointment")
 public class Appointment {
     @Id
@@ -21,9 +24,6 @@ public class Appointment {
     @Column(name = "email")
     private String email;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "date")
-    private Date date;
 
     @Column(name = "time")
     private String time;
